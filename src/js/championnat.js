@@ -22,18 +22,24 @@ class Championnat {
 	}
 
 	jouer_journee(i) {
-		// à compléter
+		this.journees[i-1].jouer();
 	}
 
 	afficher_journee(i) {
-		// à compléter
+		this.journees[i-1].afficher();
 	}
 
 	afficher_classement() {
-		// à compléter
+		let titre = document.getElementById('titres');
+        titre.innerHTML = "<table><tr><th>Nom</th><th>Points</th><th>G</th><th>N</th><th>P</th><th>but Pour</th><th>but Contre</th><th>Diff</th></tr></table>";
+
+        for (int i = 0, i < this.tabEquipes.length; i++) {
+        	let titre = document.getElementById(i+1);
+        	titre.innerHTML = "<table><tr><th>Nom</th><th>Points</th><th>G</th><th>N</th><th>P</th><th>but Pour</th><th>but Contre</th><th>Diff</th></tr></table>";
+        }
 	}
 
-	classer_eqipes() {
+	classer_equipes() {
 		// à compléter
 	}
 
