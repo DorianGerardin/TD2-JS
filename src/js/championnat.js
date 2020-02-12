@@ -31,16 +31,20 @@ class Championnat {
 
 	afficher_classement() {
 		let titre = document.getElementById('titres');
-        titre.innerHTML = "<table><tr><th>Nom</th><th>Points</th><th>G</th><th>N</th><th>P</th><th>but Pour</th><th>but Contre</th><th>Diff</th></tr></table>";
+        titre.innerHTML = "<table><tr><td>Rang</td><td>Nom</td><td>Points</td><td>G</td><td>N</td><td>P</td><td>but Pour</td><td>but Contre</td><td>Diff</td></tr></table>";
 
-        for (int i = 0, i < this.tabEquipes.length; i++) {
+        for (let i = 0; i < this.tabEquipes.length; i++) {
         	let titre = document.getElementById(i+1);
-        	titre.innerHTML = "<table><tr><th>Nom</th><th>Points</th><th>G</th><th>N</th><th>P</th><th>but Pour</th><th>but Contre</th><th>Diff</th></tr></table>";
+        	titre.innerHTML = "<table><tr><td>" + this.tabEquipes[i].classement + "</td><td>" + this.tabEquipes[i].nom + "</td><td>" + this.tabEquipes[i].nbPoints + "</td><td>" + this.tabEquipes[i].matchsW + "</td><td>" + this.tabEquipes[i].matchsN + "</td><td>" + this.tabEquipes[i].matchsL + "</td><td>" + this.tabEquipes[i].butPour + "</td><td>" + this.tabEquipes[i].butContre + "</td><td>" + (this.tabEquipes[i].butPour - this.tabEquipes[i].butContre) + "</td></tr></table>";
         }
 	}
 
 	classer_equipes() {
-		// à compléter
+		this.tabEquipes.sort(function(a,b) {return b.evaluation - a.evaluation;});
+		for (var i = 0; i < this.tabEquipes.length; i++) {
+			this.tabEquipes[i].classement = i+1;
+		}
+
 	}
 
 }

@@ -23,5 +23,7 @@
 
  let journee1 = new Journee(match1, match2, match3, match4);
 
+ let chp = new Championnat(eq1, eq2, eq3, eq4, eq5, eq6, eq7, eq8);
+
 
  

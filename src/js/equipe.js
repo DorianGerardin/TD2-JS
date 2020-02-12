@@ -13,7 +13,7 @@ class Equipe {
 	}
 
 	evaluer() {
-		this.evaluation += this.nbPoints * 10000 + (this.butPour - this.butContre) * 100 + this.butPour;
+		this.evaluation = this.nbPoints * 10000 + (this.butPour - this.butContre) * 100 + this.butPour + Math.random;
 		return this.evaluation;
 	}
 
